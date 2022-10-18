@@ -1,0 +1,47 @@
+{
+  "name": "solidity-template",
+  "version": "0.0.1",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:zumzoom/solidity-template.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@openzeppelin/contracts": "4.7.1"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "2.1.0",
+    "@nomiclabs/hardhat-etherscan": "3.1.0",
+    "@nomiclabs/hardhat-truffle5": "2.0.6",
+    "@nomiclabs/hardhat-web3": "2.0.0",
+    "@openzeppelin/test-helpers": "0.5.15",
+    "chai": "4.3.6",
+    "dotenv": "16.0.1",
+    "eslint": "8.20.0",
+    "eslint-config-standard": "17.0.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-n": "15.2.4",
+    "eslint-plugin-promise": "6.0.0",
+    "ethers": "5.6.9",
+    "hardhat": "2.10.1",
+    "hardhat-deploy": "0.11.12",
+    "hardhat-gas-reporter": "1.0.8",
+    "rimraf": "3.0.2",
+    "solhint": "3.3.7",
+    "solidity-coverage": "0.7.21"
+  },
+  "scripts": {
+    "clean": "rimraf artifacts cache coverage coverage.json",
+    "coverage": "hardhat coverage",
+    "deploy": "hardhat deploy --network",
+    "lint": "yarn run lint:js && yarn run lint:sol",
+    "lint:fix": "yarn run lint:js:fix && yarn run lint:sol:fix",
+    "lint:js": "eslint .",
+    "lint:js:fix": "eslint . --fix",
+    "lint:sol": "solhint --max-warnings 0 \"contracts/**/*.sol\"",
+    "lint:sol:fix": "solhint --max-warnings 0 \"contracts/**/*.sol\" --fix",
+    "test": "hardhat test --parallel",
+    "test:ci": "hardhat test"
+  }
+}
